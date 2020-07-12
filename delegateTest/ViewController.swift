@@ -9,12 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func buttonTapped(_ sender: Any) {
+        closureTest()
+    }
+    
+    func closureTest(){
+        closureMethod(complete: printSomething)
+    }
+    
+    func closureMethod(complete: () -> Void){
+        complete()
+    }
+    
+    func printSomething(){
+        print("something")
+    }
 }
-
